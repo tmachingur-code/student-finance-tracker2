@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- M2: Document metadata and stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102849">
+    <meta name="description" content="MariFlow helps students track income, expenses,transactions and budgets.">
+    <title>MariFlow | Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <!-- M2: Acessiblity skip link -->
+    <a class="skip-link" href="#main-content">
+        Skip to main content
+    </a>
+
+    <!-- M2: Desktop sidebar navigation -->
+    <aside class="sidebar" aria-label="Sidebar navigation">
+        
+        <!-- M2: Sidebar brand -->
+        <a class="sidebar-brand"
+           href="#dashboard" 
+           aria-label="MariFlow dashboard">
+            
+            <span class="sidebar-brand-icon" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none" xmlns="https://www.w3.org/2000/svg">
+                    <rect x="8" y="20" width="5" height="12" rx="1" fill="#C5A45D" />
+                    <rect x="17" y="14" width="5" height="18" rx="1" fill="#C5A45D" />
+                    <rect x="26" y="8" width="5" height="24" rx="1" fill="#C5A45D" />
+                    <path d="M7 24C13 19 18 27 24 21S32 18 34 14" 
+                          stroke="#FFFFFF"
+                          stroke-width="2"
+                          stroke-linecap="round" />
+                </svg>
+            </span>
+
+            <span class="sidebar-brand-name">
+                <span class="brand-pesa">Mari</span><span class="brand-flow">Flow</span>
+            </span>
+            <span class="sidebar-brand-subtitle">
+                Student Finance Tracker
+            </span>
+        </a>
+
+        <!-- M2: Navigation Links -->
+        <nav class="sidebar-nav" aria-label="Main navigation">
+
+            <a class="sidebar-link active" href="#dashboard" aria-current="page">
+                <span class="nav-icon" aria-hidden="true">⌂</span>
+                <span>Dashboard</span>
+            </a>
+
+            <a class="sidebar-link" href="#transactions">
+                <span class="nav-icon" aria-hidden="true">▤</span>
+                <span>Transactions</span>
+            </a>
+
+            <a class="sidebar-link" href="#add-transaction">
+                <span class="nav-icon add-nav-icon" aria-hidden="true">+</span>
+                <span>Add Transaction</span>
+            </a>
+
+            <a class="sidebar-link" href="#settings">
+                <span class="nav-icon" aria-hidden="true">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a class="sidebar-link" href="#about">
+                <span class="nav-icon" aria-hidden="true">ⓘ</span>
+                <span>About</span>
+            </a>
+        </nav>
+
+        <!-- M2: Sidebar accountcinformation -->
+        <div class="sidebar-bottom">
+            <div class="sidebar-user">
+                <span class="avatar" aria-hidden="true">S</span>
+                <span class="user-details">
+                    <strong>Student User</strong>
+                    <span>Personal account</span>
+                </span>
+            </div>
+            <p class="sidebar-note"> Your money.Your decisions.</p>
+        </div>
+    </aside>
+
+    <!-- M2: Application layout container -->
+    <div class="app-shell">
+
+        <!-- M2: Responsive top navigation -->
+        <header class="topbar">
+            <a class="mobile-brand" href="#dashboard" aria-label="MariFlow dashboard">
+                <span class="mobile-brand-icon" aria-hidden="true">
+                    <svg viewbox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="5" y="25" width="9" height="18" rx="2" fill="currentColor" />
+                        <rect x="19" y="15" width="9" height="28" rx="2" fill="currentColor" />
+                        <rect x="33" y="5" width="9" height="38" rx="2" fill="currentColor" />
+                        <path d="M4 31C12 24 18 32 27 23S38 18 44 12" stroke="#FFFFFF" stroke-width="2.5"
+                            stroke-linecap="round" fill="none" />
+                    </svg>
+                </span>
+
+                <span class="mobile-brand-text">
+                    <strong><span class="brand-pesa">Mari</span><span class="brand-flow">Flow</span></strong>
+                    <span>Student Finance Tracker</span>
+                </span>
+            </a>
+
+            <!-- M2:Header actions -->
+            <div class="topbar-actions">
+                <span class="today-label"> Your finances, at a glance </span>
+                <a class="icon-button" href="#settings" aria-label="Open Settings">
+                    <span aria-hidden="true">⚙</span>
+                </a>
+                <a class="button button-primary topbar-add" href="#add-transaction">
+                    <span aria-hidden="true">+</span>
+                    Add Transaction
+                </a>
+            </div>
+        </header>
+
+            <!-- M2: Main content -->
+            <main id="main-content">
+                <!-- M2: Dahboard section -->
+                <section id="dashboard" class="dashboard-section" aria-labelledby="welcome-title">
+
+                    <div class="welcome-row">
+                        <div>
+                            <p class="eyebrow">YOUR PERSONAL FINANCE SPACE</p>
+                            <h1 id="welcome-title">Welcome to MariFlow</h1>
+
+                            <p class="welcome-description">Take control of your money and build better financial habits.
+                            </p>
+                        </div>
+
+                        <!-- M2:Currency slector interface -->
+                        <div class="currency-control">
+                            <label for="display-currency">Currency</label>
+
+                            <select id="display-currency" name="display-currency">
+                                <option value="RWF">RWF</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- M2: Dahboard summary card structure -->
+                    <div class="summary-grid" aria-label="Financial summary">
+                        <article class="summary-card income-card">
+                            <p class="summary-label">Total Income</p>
+                            <p class="summary-value">RWF 0 </p>
+                        </article>
+
+                        <article class="summary-card expense-card">
+                            <p class="summary-label">Total Expenses</p>
+                            <p class="summary-value">RWF 0 </p>
+                        </article>
+
+                        <article class="summary-card remaining-card">
+                            <p class="summary-label">Remaining budget</p>
+                            <p class="summary-value">RWF 0 </p>
+                        </article>
+
+                        <article class="summary-card category-card">
+                            <p class="summary-label">Top Category</p>
+                            <p class="summary-value">No data yet</p>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- M2: Transactions section shell -->
+                <section id="transactions" 
+                         class="transactions-section panel"
+                         aria-labelledby="transactions-title">
+                    <div class="transactions-heading">
+                        <div>
+                            <p class="eyebrow">YOUR FINANCIAL ACTIVITY</p>
+                            <h2 id="transactions-title">Transactions</h2>
+                        </div>
+                    </div>
+
+                    <p> Your financial records will appear in this section.</p>
+                </section>
+
+                <!-- M2: Add transaction section shell -->
+                <section id="add-transaction" class="form-section panel" aria-labelledby="add-title">
+                    <p class="eyebrow">NEW FINANCIAL RECORD</p>
+                    <h2 id="add-title">Add Transaction</h2>
+
+                    <p> This section will contain the transaction form in a later milestone</p>
+                </section>
+
+                <!-- M2: Settings section shell-->
+                <section id="settings" class="info-section panel" aria-labelledby="settings-title">
+
+                    <p class="eyebrow">PERSONAL PREFERENCES</p>
+
+                    <h2 id="settings-title">Settings</h2>
+
+                    <p> Your personal finance settings will be added in a later milestone.</p>
+                </section>
+
+                <!-- M2: About section shell -->
+                <section id="about" class="info-section panel" aria-labelledby="about-title">
+                    <p class="eyebrow">ABOUT THE PROJECT</p>
+                    <h2 id="about-title">About MariFlow</h2>
+
+                    <p>
+                        MariFlow is a student finance tracker designed to help students manage income,expenses, and
+                        budgets.
+                    </p>
+                </section>
+            </main>
+
+            <!-- M2: Footer -->
+            <footer class="site-footer">
+                <p>© 2026 MariFlow Student Finance Tracker</p>
+                <p>Built for smarter student budgeting.</p>
+            </footer>
+        </div>
+
+        <!-- M2: Mobile bottom navigation -->
+        <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+            <a class="mobile-nav-link active" href="#dashboard" aria-current="page">
+                <span aria-hidden="true">⌂</span>
+                <span> Dashboard </span>
+            </a>
+
+            <a class="mobile-nav-link" href="#transactions">
+                <span aria-hidden="true">▤</span>
+                <span>Transactions</span>
+            </a>
+
+            <a class="mobile-add-link" href="#add-transaction" aria-label="Add transaction">
+                <span aria-hidden="true">+</span>
+                <span>Add</span>
+            </a>
+
+            <a class="mobile-nav-link" href="#settings">
+                <span aria-hidden="true">⚙</span>
+                <span>Settings</span>
+            </a>
+
+            <a class="mobile-nav-link" href="#about">
+                <span aria-hidden="true">ⓘ</span>
+                <span>About</span>
+            </a>
+        </nav>
+</body>
+
+</html>
